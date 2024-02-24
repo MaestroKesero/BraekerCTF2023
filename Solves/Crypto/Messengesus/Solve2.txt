@@ -1,0 +1,46 @@
+from itertools import cycle
+from typing import List
+
+from pwn import *
+
+
+def get_line_from_server() -> bytes:
+    """
+    Connect to the server and retrieve the encrypted line from the server.
+    """
+    remote_connection = remote('0.cloud.chals.io', 26265)
+
+    buffer = b""
+    while True:
+        try:
+            buffer += remote_connection.recv()
+        except EOFError:
+            remote_connection.close()
+            return buffer
+
+def xor_bytes(first: bytes, second: bytes) -> List[int]:
+    return [a ^ b for a, b in zip(first, second)]
+
+prefix = "brck{"
+
+i = 0
+while True:
+    i += 1
+    print(f"Iteration number: {i}")
+    encrypted = get_line_from_server()
+    if len(encrypted) != 42:
+        continue
+    
+    assumed_key = bytes(xor_bytes(encrypted[:5], prefix.encode()))
+
+    decrypted = bytes(xor_bytes(encrypted, cycle(assumed_key)))
+    try:
+        decrypted_str = decrypted.decode()
+    except UnicodeDecodeError:
+        continue
+    if decrypted_str.isprintable():
+        print(decrypted_str)
+        break
+
+
+POC for cracking Messengesus (first one). We spam until by chance the key is smaller than the known plaintext ("brck{") and then we reuse it in a loop

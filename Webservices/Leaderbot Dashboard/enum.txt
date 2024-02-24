@@ -1,0 +1,15 @@
+One of the leaderbots tells you about the dashboard they have built. "Why was it built?" you ask.
+
+"What do you mean, why was it built? It's a dashboard. You've got to build dashboards. It will show us the numbers."
+
+"What will you do with the numbers?"
+
+"Decide if it is a good dashboard or not, obviously. You're not quick to catch on are you? Plus, everyone knows adding more dashboards increases security by the percentage shown on the dashboard."
+
+
+Convince the leaderbot that too much shadow IT might be decremental to security.
+
+Note: This service will crash / restart when exploited, due to the nature of the vulnerability.
+
+https://braekerctf-leaderbot-dashboard.chals.io/
+

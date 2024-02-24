@@ -1,0 +1,5 @@
+Bots are developing this crazy idea of 'phone numbers' so they can directly contact each other without having to waste time on the internet. They're even developing an analog distributed database to increase productivity. Local leaderbots will receive regular status updates from nearby bots. Check out the link to see the updates in action.
+
+https://braekerctf-dialbeacon.chals.io/+31613371000
+
+t's SQL-Injection. Good luck!

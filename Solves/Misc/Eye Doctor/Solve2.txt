@@ -1,0 +1,5 @@
+image = rgb2gray(imread("./approach.png"));
+PSF = fspecial('motion',30,15);
+[J P] = deconvblind(image,PSF,20);
+figure
+imshow(J)

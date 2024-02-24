@@ -1,0 +1,3 @@
+Basicamente lo que teniamos que hacer es buscar en google por el id entero de cada subapartado y posteriormente entrar al tuit citado (id del tuit) y contar palabras asociadas al numero de la parte decimal asociado a cada id.
+
+flag{Code_is_everywhere}

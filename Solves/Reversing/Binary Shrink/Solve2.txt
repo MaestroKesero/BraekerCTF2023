@@ -1,0 +1,1 @@
+binary shrink using radare2 : https://mahmoudelfawair.medium.com/breakerctf-24-binaryshrink-4cc9feae0259

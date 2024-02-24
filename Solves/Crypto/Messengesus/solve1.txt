@@ -1,0 +1,1 @@
+Messegnesus 1 : the random array being pulled from /dev/urandom was sometimes smaller than the cleartext you know (3 bytes for instance). This way you could get the key by xoring `brc` with the 3 first bytes -> now you have the key and can decode the whole flag (same for 2,3,4 and 5)
